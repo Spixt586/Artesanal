@@ -7,7 +7,7 @@ public class TestRecargar {
 	public static void main(String[] args) {
 
 		boolean resultado;
-		Maquina rubia = new Maquina("Pilsener", "Cerveza fría", 0.02, 8000);
+		Maquina rubia = new Maquina("Pilsener", "09437", "Cerveza rubia", 0.02, 10000);
 
 		System.out.println("----------ESTADO INICIAL----------");
 		rubia.imprimir();

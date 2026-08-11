@@ -1,28 +1,36 @@
 package com.krakedev.artesanal;
 
 public class Maquina {
-
+	
 	private String nombreCerveza;
+	private String codigo;
 	private String descripcion;
 	private double precioPorMl;
 	private double capacidadMaxima;
 	private double cantidadActual;
 
-	public Maquina(String nombreCerveza, String descripcion, double precioPorMl, double capacidadMaxima) {
+	public Maquina(String nombreCerveza, String codigo, String descripcion, double precioPorMl, double capacidadMaxima) {
 		this.nombreCerveza = nombreCerveza;
+		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.precioPorMl = precioPorMl;
 		this.capacidadMaxima = capacidadMaxima;
 		this.cantidadActual = 0;}
 	
-	public Maquina(String nombreCerveza, String descripcion, double precioPorMl) {
+	public Maquina(String nombreCerveza, String codigo, String descripcion, double precioPorMl) {
 		this.nombreCerveza = nombreCerveza;
+		this.codigo = codigo;
 		this.descripcion = descripcion;
 		this.precioPorMl = precioPorMl;
 		this.capacidadMaxima = 10000;
 		this.cantidadActual = 0;}
 	
 
+	public String getCodigo() {
+		return codigo;
+	}
+
+	
 	public String getNombreCerveza() {
 		return nombreCerveza;
 	}
@@ -62,20 +70,20 @@ public class Maquina {
 	public void imprimir() {
 		String mensaje;
 
-		mensaje = "Nombre de Cerveza: " + nombreCerveza + ", Descripción: " + descripcion + ", Précio por ml: "
+		mensaje = "Nombre de Cerveza: " + nombreCerveza + "Código de cerveza: "+ codigo +", Descripción: " + descripcion + ", Précio por ml: "
 				+ precioPorMl + ", Capacidad Máxima: " + capacidadMaxima + ", Cantidad Actual: " + cantidadActual;
 
 		System.out.println(mensaje);
 	}
 	
 	public void llenarMaquina() {
-		this.cantidadActual = this.capacidadMaxima - 100;
+		this.cantidadActual = this.capacidadMaxima - 200;
 	}
 	
 	public boolean recargarCerveza(double cantidad) {
 		
 		double limitePermitido;
-		limitePermitido = capacidadMaxima - 100;
+		limitePermitido = capacidadMaxima - 200;
 		
 		if(cantidadActual + cantidad <= limitePermitido) {
 			
